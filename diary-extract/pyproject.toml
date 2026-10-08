@@ -1,0 +1,14 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "diary-extract"
+version = "0.1.0"
+description = "CLI tool for diary-extract"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+diary-extract = "diary_extract.main:main"

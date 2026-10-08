@@ -1,0 +1,6 @@
+[tool.uv.workspace]
+members = [
+    "diary-extract",
+    "hdd-rename",
+    "kakao-emoticon",
+]
