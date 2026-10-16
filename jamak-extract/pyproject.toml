@@ -1,0 +1,14 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jamak-extract"
+version = "0.2.0"
+description = "CLI tool for jamak-extract"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+jamak-extract = "jamak_extract.main:main"
