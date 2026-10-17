@@ -1,0 +1,14 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "srt-time-change"
+version = "0.1.0"
+description = "CLI tool for srt-time-change"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+srt-time-change = "srt_time_change.main:main"

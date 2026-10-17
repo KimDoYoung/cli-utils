@@ -1,0 +1,14 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "smi2srt"
+version = "0.1.0"
+description = "CLI tool for smi2srt"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+smi2srt = "smi2srt.main:main"

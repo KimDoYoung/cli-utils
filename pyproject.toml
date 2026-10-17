@@ -1,5 +1,7 @@
 [tool.uv.workspace]
 members = [
+    "srt-time-change",
+    "smi2srt",
     "jamak-extract",
     "diary-extract",
     "hdd-rename",
