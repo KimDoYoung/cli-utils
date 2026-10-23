@@ -139,6 +139,11 @@ uv tool uninstall hdd-rename
 ./make-new-cli.sh diary-extract
 ```
 
+### 설치시 사용할 쉘프로그램
+
+- install.sh
+
+
 ---
 
 ### 📝 수동 생성 절차
