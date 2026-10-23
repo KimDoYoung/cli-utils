@@ -28,7 +28,7 @@ def clean_text(raw_html: str) -> str:
 
 def read_smi_file(filepath: Path) -> str:
     """인코딩 감지 및 파일 읽기 (UTF-8, CP949, EUC-KR 순서로 시도)"""
-    encodings = ["utf-8-sig", "utf-8", "cp949", "euc-kr"]
+    encodings = ["utf-8-sig", "utf-8", "cp949", "euc-kr", "utf-16"]
     raw_bytes = filepath.read_bytes()
 
     for enc in encodings:
@@ -36,7 +36,19 @@ def read_smi_file(filepath: Path) -> str:
             return raw_bytes.decode(enc)
         except (UnicodeDecodeError, LookupError):
             continue
-    raise UnicodeDecodeError(
+
+    # 파일 끝이 잘리는 등 일부 바이트 손상이 있는 경우 손상 문자('\ufffd')가 가장 적은 인코딩 선택
+    candidates = []
+    for enc in ["utf-8-sig", "cp949"]:
+        text = raw_bytes.decode(enc, errors="replace")
+        if "<SAMI" in text.upper() or "<SYNC" in text.upper():
+            candidates.append((text.count("\ufffd"), text))
+
+    if candidates:
+        candidates.sort(key=lambda x: x[0])
+        return candidates[0][1]
+
+    raise ValueError(
         "지원되는 인코딩(UTF-8, CP949 등)으로 파일을 읽을 수 없습니다."
     )
 

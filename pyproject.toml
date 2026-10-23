@@ -1,5 +1,6 @@
 [tool.uv.workspace]
 members = [
+    "capture-merge",
     "srt-time-change",
     "smi2srt",
     "jamak-extract",
