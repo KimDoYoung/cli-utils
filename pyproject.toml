@@ -1,5 +1,6 @@
 [tool.uv.workspace]
 members = [
+    "movie-cut",
     "capture-merge",
     "srt-time-change",
     "smi2srt",
