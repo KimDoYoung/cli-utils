@@ -1,0 +1,14 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "delete-hdd-gabages"
+version = "0.1.0"
+description = "CLI tool for delete-hdd-gabages"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+delete-hdd-gabages = "delete_hdd_gabages.main:main"
